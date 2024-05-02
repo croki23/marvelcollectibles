@@ -1,0 +1,130 @@
+.hero {
+    height: 100vh;
+    background: linear-gradient(180deg, #141414, #2c2c2c); /* Gradient from dark gray to black */
+    display: flex;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 180px;
+    line-height: 1.1;
+}
+
+.hero-left h2 {
+    color: #fff; /* White text color */
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.hero-left p {
+    color: #fff; /* White text color */
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.hero-hand-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-hand-icon img {
+    width: 105px;
+}
+
+.hero-latest-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adjusted gap */
+    width: fit-content; /* Adjusted width */
+    height: fit-content; /* Adjusted height */
+    border-radius: 75px;
+    margin-top: 20px;
+    background: #ff4141; /* MARVEL red */
+    color: #fff; /* White text color */
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 20px; /* Added padding */
+}
+
+.hero-latest-btn span {
+    display: inline-block;
+}
+
+.hero-latest-btn img {
+    width: 30px; /* Increased arrow icon size */
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    width: 900px;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    animation: pulsateGlow 3s infinite alternate;
+    filter: drop-shadow(0 0 10px #ff1744); /* Add a red drop shadow for a fiery effect */
+}
+
+@keyframes pulsateGlow {
+    0% {
+        border: 4px solid rgba(255, 77, 77, 0.8); /* Red with transparency */
+        box-shadow: 0 0 20px 10px rgba(255, 77, 77, 0.8), inset 0 0 20px rgba(255, 204, 0, 0.5); /* Red glow effect */
+    }
+    50% {
+        border: 4px solid rgba(255, 204, 0, 0.8); /* Yellow with transparency */
+        box-shadow: 0 0 40px 20px rgba(255, 204, 0, 0.8), inset 0 0 40px rgba(255, 77, 77, 0.5); /* Yellow glow effect */
+    }
+    100% {
+        border: 4px solid rgba(255, 77, 77, 0.8); /* Back to red with transparency */
+        box-shadow: 0 0 20px 10px rgba(255, 77, 77, 0.8), inset 0 0 20px rgba(255, 204, 0, 0.5); /* Red glow effect */
+    }
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    width: 900px;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px #ff1744); /* Thinner red drop shadow */
+}
+
+.hero-image.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+    border: 2px solid; /* Remove the solid border color */
+    border-image: linear-gradient(180deg, #ff4d4d, #ffcc00); /* Red to yellow gradient border */
+    border-image-slice: 1; /* Ensure the entire border is covered by the gradient */
+    animation: pulsateGlow 3s infinite alternate;
+}
+
+@keyframes pulsateGlow {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 77, 77, 0.8), inset 0 0 10px rgba(255, 204, 0, 0.5); /* Thinner red glow effect */
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(255, 204, 0, 0.8), inset 0 0 20px rgba(255, 77, 77, 0.5); /* Thinner yellow glow effect */
+    }
+    100% {
+        box-shadow: 0 0 10px 5px rgba(255, 77, 77, 0.8), inset 0 0 10px rgba(255, 204, 0, 0.5); /* Thinner red glow effect */
+    }
+}
+
